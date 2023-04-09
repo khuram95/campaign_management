@@ -1,0 +1,15 @@
+
+<div class="mb-3 w-50 m-auto">
+  <h4 class="py-1">Upload Campaing:</h4>
+  <%= form_with url: campaigns_path do |f| %>
+    <div class="mb-3">
+      <%= f.label :name, class: "form-label" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+    <%= f.label :import_file, class: "form-label" %>
+    <%= f.file_field :import_file, class: "form-control", accept: ".csv" %>
+    </div>
+    <%= f.submit "Upload", class: "btn btn-primary float-end" %>
+  <% end %>
+</div>

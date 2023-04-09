@@ -1,0 +1,26 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: ''}) do |f| %>
+
+  <div class="form-group py-2">
+    <%= f.label :email, nil, class: 'col-form-label' %>
+    <%= f.email_field :email, autofocus: false, required: true, class: "form-control", placeholder: "Email"   %>
+  </div>
+
+  <div class="form-group py-2">
+    <%= f.label :password, nil, class: 'col-form-label' %>
+    <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: "Password" %>
+  </div>
+
+  <%- if false && devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <div class="form-group py-2">
+      <p>
+        <%= link_to new_user_password_path do -%>
+          Forgot password?
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+
+  <div class="form-group py-2 float-end">
+    <%= f.submit "LOGIN", class: "btn btn-primary" %>
+  </div>
+<% end %>

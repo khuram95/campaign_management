@@ -1,0 +1,18 @@
+<div class=" Auth-lft-sec">
+  <h1 class="testi-tp-heading"> DealFlow <small style="font-size: 14px;font-weight: 600; color: #c5f3d5">powered by SmartZip</small> </h1>
+  <div class="single-item testimonial-sec">
+    <%(1..3).map do|index|%>
+      <div class="testimonial-item ">
+        <span>
+          <%= image_tag("/assets/auth/auth-testimonial-img#{index}.jpg", class: "img") %>
+        </span>
+        <div class="testi-detail">
+          <p><%= Rails.application.config.testimonials["step_#{index}_text"] %></p>
+          <div class="testi-profDetail">
+            <h3><%= Rails.application.config.testimonials["step_#{index}_author"] %></h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<% if resource.errors.any? %>
+  $("#form-section").html("<%= j render partial: 'devise/passwords/change_password', locals: { resource: resource } %>");
+<% else %>
+  $("#modal-container").modal("hide");
+
+  <% if params[:type] == 'email' %>
+    displayAlertMsg('notice', "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.");
+    <% else %>
+    displayAlertMsg('notice', "You updated your account successfully.");
+  <% end %>
+<% end %>
